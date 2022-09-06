@@ -1,7 +1,20 @@
 const User = require('../models/User')
 const list = async (request,response) =>{
   const data =  await User.updateOne({first_name:"umair"},{email:"umair@gmail.com"})
-    console.log("running")
+    response.json({data})
+}
+module.exports = { list }
+
+
+
+=========================
+
+
+
+
+const User = require('../models/User')
+const list = async (request,response) =>{
+  const data =  await User.updateOne({first_name:"umair"},{$set:{count:10}})
     response.json({data})
 }
 module.exports = { list }
