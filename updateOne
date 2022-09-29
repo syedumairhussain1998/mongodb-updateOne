@@ -18,3 +18,23 @@ const list = async (request,response) =>{
     response.json({data})
 }
 module.exports = { list }
+
+
+
+
+
+========================
+
+
+
+
+const User = require("../models/User");
+const list = async (request, response) => {
+  const data = await User.updateOne(
+    { email: "test3000" },
+    { $set: { email: "test4000" } },
+    { upsert: true }
+  );
+  response.json({ data });
+};
+module.exports = { list };
